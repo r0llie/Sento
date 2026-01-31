@@ -126,7 +126,7 @@ export default function InvoiceDetailPage() {
   const feeRateLabel = `${(SENTO_FEE_PERCENTAGE * 100).toFixed(1)}%`;
 
   return (
-    <div className="min-h-[80vh] py-12 px-4">
+    <div className="min-h-screen pt-24 pb-12 px-4">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
