@@ -1,0 +1,44 @@
+{
+  "name": "sento",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test-validator": "light test-validator",
+    "remotion:preview": "remotion studio remotion/index.tsx",
+    "remotion:render": "remotion render remotion/index.tsx SentoDemo out/sento-demo.mp4",
+    "remotion:render:gif": "remotion render remotion/index.tsx SentoDemo out/sento-demo.gif --image-format=png",
+    "remotion:upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@lightprotocol/compressed-token": "^0.22.0",
+    "@lightprotocol/stateless.js": "^0.22.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/tailwind": "^4.0.0",
+    "@solana/wallet-adapter-base": "^0.9.27",
+    "@solana/wallet-adapter-react": "^0.15.39",
+    "@solana/wallet-adapter-react-ui": "^0.9.39",
+    "@solana/wallet-adapter-wallets": "^0.19.37",
+    "@solana/web3.js": "^1.98.4",
+    "@supabase/supabase-js": "^2.90.1",
+    "framer-motion": "^12.25.0",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@lightprotocol/zk-compression-cli": "^0.27.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

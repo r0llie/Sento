@@ -1,0 +1,666 @@
+@import "tailwindcss";
+
+/* ============================================
+   SENTO DESIGN SYSTEM v2
+   Premium Fintech Aesthetic
+   Inspired by: Stripe, Linear, Mercury
+   
+   Brand: Elite, Discreet, Precise
+   - Sharp edges, minimal blur
+   - Cold mint accents
+   - Strong visual hierarchy (A/B/C)
+   ============================================ */
+
+/* ===== COLOR SYSTEM =====
+   Low saturation, high contrast
+   3-LEVEL VISUAL HIERARCHY:
+   A = Primary actions (brightest, largest)
+   B = Important data (balance, amounts)
+   C = Everything else (muted, smaller)
+*/
+:root {
+  /* Page Background - Pure dark */
+  --bg-page: #09090B;
+  
+  /* Card Backgrounds */
+  --bg-card: #111113;
+  --bg-card-hover: #16161A;
+  
+  /* Private/Premium Card - Subtle glow */
+  --bg-card-private: #0F1412;
+  --bg-card-private-border: rgba(94, 217, 179, 0.15);
+  
+  /* Input/Interactive Backgrounds */
+  --bg-input: #0C0C0E;
+  --bg-input-hover: #111113;
+  
+  /* Elevated surfaces */
+  --bg-elevated: #18181B;
+  
+  /* Subtle surface */
+  --bg-subtle: rgba(255, 255, 255, 0.02);
+  --bg-subtle-hover: rgba(255, 255, 255, 0.04);
+  
+  /* ===== TEXT HIERARCHY ===== */
+  /* Level A - Primary actions, CTAs */
+  --text-action: #FFFFFF;
+  
+  /* Level B - Important data (balance, amounts) */
+  --text-primary: #FAFAFA;
+  
+  /* Level C - Everything else */
+  --text-secondary: #71717A;
+  --text-tertiary: #52525B;
+  --text-disabled: #3F3F46;
+  
+  /* Borders - Sharp, not soft */
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-default: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.10);
+  --border-focus: rgba(94, 217, 179, 0.4);
+  
+  /* Primary Accent - Cool mint (Stripe-like) */
+  --accent-primary: #5ED9B3;
+  --accent-primary-hover: #4FC9A3;
+  --accent-primary-bright: #6FE9C3;
+  --accent-primary-muted: rgba(94, 217, 179, 0.12);
+  --accent-primary-subtle: rgba(94, 217, 179, 0.06);
+  
+  /* Private/Magic accent - Premium glow */
+  --accent-private: #5ED9B3;
+  --accent-private-glow: rgba(94, 217, 179, 0.08);
+  
+  /* Semantic Colors */
+  --color-success: #5ED9B3;
+  --color-success-muted: rgba(94, 217, 179, 0.12);
+  --color-warning: #F5A623;
+  --color-warning-muted: rgba(245, 166, 35, 0.12);
+  --color-error: #EF4444;
+  --color-error-muted: rgba(239, 68, 68, 0.12);
+  --color-info: #3B82F6;
+  --color-info-muted: rgba(59, 130, 246, 0.12);
+  
+  /* Shadows - Tighter, no blur spread */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-private: 0 0 20px rgba(94, 217, 179, 0.06);
+  
+  /* Typography */
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', 'Fira Code', monospace;
+  
+  /* Spacing Scale (8px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  
+  /* Border Radius - SHARPER (less friendly, more precise) */
+  --radius-xs: 4px;
+  --radius-sm: 5px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  
+  /* Transitions - Snappier */
+  --transition-fast: 100ms ease;
+  --transition-base: 150ms ease;
+  --transition-slow: 250ms ease;
+}
+
+/* ===== BASE STYLES ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background-color: var(--accent-primary-muted);
+  color: var(--text-primary);
+}
+
+/* Scrollbar - Minimal */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* ===== TYPOGRAPHY SYSTEM =====
+   3-Level Hierarchy: A (action) > B (data) > C (support)
+*/
+
+/* LEVEL A - Actions, CTAs, Hero */
+.text-hero {
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: var(--text-action);
+}
+
+/* H1 - Page titles */
+.text-h1 {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+/* H2 - Section headers */
+.text-h2 {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+/* LEVEL B - Important Data */
+.text-balance {
+  font-family: var(--font-mono);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance-private {
+  font-family: var(--font-mono);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--accent-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* LEVEL C - Supporting Content */
+/* H3 - Card titles */
+.text-h3 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+/* Body - Default text */
+.text-body {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+/* Body Small */
+.text-body-sm {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+}
+
+/* Label - Form labels */
+.text-label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Micro - Hints, metadata */
+.text-micro {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-tertiary);
+}
+
+/* Overline - Section labels */
+.text-overline {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* Data Display - Numbers, amounts (Level B) */
+.text-data {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.text-data-sm {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.container-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.container-narrow {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.container-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Section spacing */
+.section {
+  padding: var(--space-24) 0;
+}
+
+.section-lg {
+  padding: var(--space-32) 0;
+}
+
+/* ===== CARD SYSTEM =====
+   Sharp, precise, layered
+   Private = premium, Public = utility
+*/
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.card-elevated {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Private Card - Premium treatment (magic) */
+.card-private {
+  background: var(--bg-card-private);
+  border: 1px solid var(--bg-card-private-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-private);
+  position: relative;
+}
+
+.card-private::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(94, 217, 179, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Public Card - Utility, flat */
+.card-public {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  opacity: 0.85;
+}
+
+.card-interactive {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-default);
+}
+
+/* Card padding standards */
+.card-padding-sm { padding: var(--space-4); }
+.card-padding-md { padding: var(--space-5); }
+.card-padding-lg { padding: var(--space-6); }
+
+/* ===== BUTTON HIERARCHY =====
+   LEVEL A = Primary (brightest, 1 per screen)
+   LEVEL C = Secondary/Ghost (muted)
+*/
+
+/* Primary - Main CTA, maximum 1 per screen (LEVEL A) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 42px;
+  padding: 0 var(--space-5);
+  background: var(--accent-primary);
+  color: #09090B;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background: var(--accent-primary-bright);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background: var(--text-disabled);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Secondary - Supporting actions (LEVEL C) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 42px;
+  padding: 0 var(--space-5);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  background: var(--bg-subtle);
+}
+
+.btn-secondary:disabled {
+  color: var(--text-disabled);
+  border-color: var(--border-subtle);
+  cursor: not-allowed;
+}
+
+/* Ghost - Tertiary actions (LEVEL C) */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 34px;
+  padding: 0 var(--space-3);
+  background: transparent;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-ghost:hover {
+  color: var(--text-secondary);
+  background: var(--bg-subtle);
+}
+
+/* Size variants */
+.btn-sm {
+  height: 34px;
+  padding: 0 var(--space-4);
+  font-size: 12px;
+}
+
+.btn-lg {
+  height: 48px;
+  padding: 0 var(--space-6);
+  font-size: 14px;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--space-4);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 15px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.input::placeholder {
+  color: var(--text-disabled);
+}
+
+.input:hover {
+  background: var(--bg-input-hover);
+  border-color: var(--border-default);
+}
+
+.input:focus {
+  outline: none;
+  background: var(--bg-input-hover);
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--accent-primary-subtle);
+}
+
+.input-error {
+  border-color: var(--color-error);
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px var(--color-error-muted);
+}
+
+/* Form field spacing */
+.form-field {
+  margin-bottom: var(--space-5);
+}
+
+.form-field:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-hint {
+  margin-top: var(--space-2);
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.form-error {
+  margin-top: var(--space-2);
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+/* ===== STATUS INDICATORS ===== */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+}
+
+.status-badge--success {
+  background: var(--color-success-muted);
+  color: var(--color-success);
+}
+
+.status-badge--warning {
+  background: var(--color-warning-muted);
+  color: var(--color-warning);
+}
+
+.status-badge--error {
+  background: var(--color-error-muted);
+  color: var(--color-error);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-dot--online { background: var(--color-success); }
+.status-dot--offline { background: var(--color-error); }
+.status-dot--pending { background: var(--color-warning); }
+
+/* ===== DIVIDERS ===== */
+.divider {
+  height: 1px;
+  background: var(--border-subtle);
+  border: none;
+  margin: var(--space-6) 0;
+}
+
+.divider-subtle {
+  height: 1px;
+  background: var(--border-subtle);
+  border: none;
+  margin: var(--space-4) 0;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from { 
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: slideUp 0.4s ease-out;
+}
+
+/* ===== PRIVACY ACCENT =====
+   Subtle visual signature for privacy features
+*/
+.privacy-accent {
+  background: linear-gradient(135deg, var(--accent-primary-subtle) 0%, transparent 50%);
+}
+
+.privacy-border {
+  border-left: 2px solid var(--accent-primary);
+}
+
+/* ===== UTILITY CLASSES ===== */
+.truncate-address {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

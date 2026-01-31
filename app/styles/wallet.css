@@ -1,0 +1,79 @@
+/* ============================================
+   Sento - Wallet Adapter Styles
+   ============================================ */
+
+/* Override wallet adapter default styles */
+.wallet-adapter-button {
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%) !important;
+  border-radius: 0.75rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease-out !important;
+}
+
+.wallet-adapter-button:hover {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 100%) !important;
+  transform: translateY(-1px);
+}
+
+.wallet-adapter-button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+.wallet-adapter-button-trigger {
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%) !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.wallet-adapter-modal-container {
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 1rem !important;
+}
+
+.wallet-adapter-modal-title {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.wallet-adapter-modal-list {
+  margin: 0 !important;
+}
+
+.wallet-adapter-modal-list li {
+  margin-bottom: 0.5rem !important;
+}
+
+.wallet-adapter-modal-list-more {
+  color: #10b981 !important;
+}
+
+.wallet-adapter-modal-list-more:hover {
+  color: #059669 !important;
+}
+
+.wallet-adapter-button-end-icon,
+.wallet-adapter-button-start-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.wallet-adapter-dropdown {
+  background: #1f2937 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
+}
+
+.wallet-adapter-dropdown-list-item {
+  transition: background 0.15s ease !important;
+}
+
+.wallet-adapter-dropdown-list-item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
