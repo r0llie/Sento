@@ -136,7 +136,8 @@ npm run test-validator  # Start Light Protocol test validator
 
 ## Demo
 
-**Video Demo**: [Watch the Demo Video](#)
+**Live App**: https://sento-six.vercel.app
+**Video Demo**: [Watch on YouTube](#)
 
 ### Test Wallets
 
