@@ -7,7 +7,7 @@ Sento is a private invoicing and payment platform built on Solana using [Light P
 ## Quick Links
 
 - **Live Demo**: https://sento-six.vercel.app
-- **Demo Video**: https://www.youtube.com/watch?v=cn7fym3abnc
+- **Demo Video**: https://www.youtube.com/playlist?list=PLyVUjXIFu2yxdzV10G8DIfwWlQUukDuGY
 - **GitHub**: https://github.com/r0llie/Sento
 
 ## Features
